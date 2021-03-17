@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details_nav"
+    app:startDestination="@id/mainPage">
+
+    <fragment
+        android:id="@+id/mainPage"
+        android:name="com.example.testforwork.MainPage"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPage_to_detailsPage"
+            app:destination="@id/detailsPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsPage"
+        android:name="com.example.testforwork.DetailsPage"
+        android:label="fragment_details_page"
+        tools:layout="@layout/fragment_details_page" >
+        <action
+            android:id="@+id/action_detailsPage_to_mainPage"
+            app:destination="@id/mainPage" />
+        <argument
+            android:name="Event"
+            app:argType="com.example.testforwork.Model.Event" />
+    </fragment>
+</navigation>
